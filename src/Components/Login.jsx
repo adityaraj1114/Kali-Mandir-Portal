@@ -16,12 +16,19 @@ const Login = ({ setIsAuthenticated }) => {
     const staffEmail = 'staff@kalimandir.com';
     const staffPassword = 'password123';
 
+    // if (email === staffEmail && password === staffPassword) {
+    //   setIsAuthenticated(true); // Set auth state
+    //   navigate('/register-marriage'); // Redirect to form
+    // } else {
+    //   setError('Invalid credentials. Please try again.');
+    // }
+
     if (email === staffEmail && password === staffPassword) {
-      setIsAuthenticated(true); // Set auth state
-      navigate('/register-marriage'); // Redirect to form
-    } else {
-      setError('Invalid credentials. Please try again.');
-    }
+  localStorage.setItem('isAuthenticated', 'true'); // ✅ persist login
+  setIsAuthenticated(true);
+  navigate('/register-marriage');
+}
+
   };
 
   return (
