@@ -66,9 +66,9 @@ function App() {
         <Route
           path="/contact"
           element={
-            <PrivateRoute>
+            // <PrivateRoute>
               <ContactUs />
-            </PrivateRoute>
+            // </PrivateRoute>
           }
         />
 

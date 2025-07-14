@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
-        <Link className="navbar-brand" to="/">Kali Mandir Portal</Link>
+        <Link className="navbar-brand" to="/">Shri Shyama Maa</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -37,7 +37,15 @@ const Navbar = () => {
             )}
 
             <li className="nav-item">
+              <Link className="nav-link" to="/gallery">Gallery</Link>
+            </li>
+
+            <li className="nav-item">
               <Link className="nav-link" to="/contact">Contact Us</Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/login">Admin Login</Link>
             </li>
 
             {isAuthenticated && (

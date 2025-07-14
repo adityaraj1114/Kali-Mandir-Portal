@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ContactUs = () => {
   return (
-    <div className="container py-5">
+    <div className="container-fluid py-5 bg-primary-subtle">
       <motion.div
         className="text-center mb-5"
         initial={{ opacity: 0, y: -50 }}
