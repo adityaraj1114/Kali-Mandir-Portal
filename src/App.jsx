@@ -12,7 +12,9 @@ import ViewApplication from "./Components/ViewApplication";
 import Navbar from "./Components/Navbar";
 import Forms from "./Components/Forms";
 import ContactUs from "./Components/ContactUs";
-import PrivateRoute from "./Components/PrivateRoute"; // ✅ new
+import PrivateRoute from "./Components/PrivateRoute";
+import Posts from "./Pages/Posts";
+import NewPost from "./Pages/NewPost";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -24,19 +26,13 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
+      <Navbar isAuthenticated={isAuthenticated} />
       <Routes>
         <Route
           path="/login"
           element={<Login setIsAuthenticated={setIsAuthenticated} />}
         />
-
-        <Route
-          path="/"
-          element={           
-              <Home />           
-          }
-        />
+        <Route path="/" element={<Home />} />
 
         <Route
           path="/register-marriage"
@@ -63,16 +59,20 @@ function App() {
           }
         />
 
+        <Route path="/posts" element={<Posts />} />
+
         <Route
-          path="/contact"
+          path="/newpost"
           element={
-            // <PrivateRoute>
-              <ContactUs />
-            // </PrivateRoute>
+            <PrivateRoute>
+              <NewPost />
+            </PrivateRoute>
           }
         />
 
-        <Route path="*" element={<Navigate to="/login" />} />
+        <Route path="/contact" element={<ContactUs />} />
+
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );
